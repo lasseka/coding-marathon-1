@@ -1,0 +1,94 @@
+/* I think css is fun and interesting, I'm just not very good at it. I'm eager to learn more */
+
+.signup-container {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.signup-form {
+    flex-direction: column;
+    padding: 30px;
+}
+
+.signup-form input{
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.signup-form button {
+    background-color: #45b6fe;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    width: auto;
+}
+
+.signup-form button:hover {
+    background-color: #8fd3fe ;
+}
+
+.signup-form button:active {
+    background-color: #45b6fe ;
+}
+
+.signup-form select{
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.signup-form .description{
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+}
+
+.valid {
+    border: 2px solid green;
+    width: 100%;
+}
+
+.invalid {
+    border: 2px solid red;
+    width: 100%;
+}
+
+
+
+.signup-form .error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.signup-form .success-message {
+    color: green;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.greeting {
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+}
