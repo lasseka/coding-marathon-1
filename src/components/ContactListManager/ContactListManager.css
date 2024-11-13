@@ -4,5 +4,11 @@
     gap: 10px;
     max-width: 200px;
 }
-.contact{
+.allContacts{
+    border: 1px solid black;
+
+/*
+    display:flex;
+    width: fit-content;
+*/
 }
