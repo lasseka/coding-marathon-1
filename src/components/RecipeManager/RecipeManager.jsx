@@ -5,8 +5,12 @@ import Recipe from './Recipe';
 function RecipeManager() {
   //List for recipes
   const [recipes, setRecipes] = useState([]);
-  let counter = 1;
 
+
+  /*Code review: I used useStates to manage multiple states. 
+  This is beneficial because it helps keep the state updated and synchronized with user input, 
+  which is essential in form-driven interfaces.
+  Now I feel like I understand the topic much better and feel comfortable with it.*/
   // Input fields
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
@@ -22,8 +26,12 @@ function RecipeManager() {
         }
         
         // Create a new recipe object
+
+        /*Code Review:
+        The split and trim methods were new to me, and it was very insightful to learn you can use a specific character to split
+        the user input into smaller bits. For clarity, I used , for ingredients and . for instructions.*/
         const newRecipe = {
-            id: counter++,
+            id: Date.now(),
             name: name,
             ingredients: ingredients.split(',').map(ingredient => ingredient.trim()),
             instructions: instructions.split('.').map(instruction => instruction.trim())
@@ -47,10 +55,8 @@ function RecipeManager() {
     return (
         <div>
             <h2>Recipe Manager</h2>
-            <div>
+            <div className='recipe-manager'>
               <h3>Add new recipe</h3>
-              <label>Seperate Ingredients by commas ","</label>
-              <label>Seperate Instructions by periods "."</label>
               <div>
                 <label>Recipe name: </label>
               <input
@@ -62,6 +68,7 @@ function RecipeManager() {
               </div>
               <div>
                 <label>Ingredients: </label>
+                <label className='instructions'>(Seperate by commas ",") </label>
                 <textarea
                     placeholder="Enter ingredients"
                     value={ingredients}
@@ -70,6 +77,7 @@ function RecipeManager() {
               </div>
               <div>
               <label>Instructions: </label>
+              <label className='instructions'>(Seperate by periods ".")</label>
                 <textarea
                     placeholder="Enter instructions"
                     value={instructions}
@@ -78,9 +86,9 @@ function RecipeManager() {
               </div>
                 <button onClick={addRecipe}>Add Recipe</button>
             </div>
-
-            <div>
-                <h3>Recipes</h3>
+ 
+            <h2>Recipes</h2> 
+            <div className='recipes'>
                 {recipes.map((recipe) => (
                     <Recipe
                     key={recipe.id}
