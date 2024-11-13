@@ -6,6 +6,9 @@ function RecipeManager() {
   //List for recipes
   const [recipes, setRecipes] = useState([]);
 
+  /*Code review: I forgot to utilize the base form from GitHub, but It was nice to see I can do it myself.
+  In addition a lot of the things are similar, which made me feel pretty confident about what i have learned.*/
+
 
   /*Code review: I used useStates to manage multiple states. 
   This is beneficial because it helps keep the state updated and synchronized with user input, 
@@ -31,7 +34,7 @@ function RecipeManager() {
         The split and trim methods were new to me, and it was very insightful to learn you can use a specific character to split
         the user input into smaller bits. For clarity, I used , for ingredients and . for instructions.*/
         const newRecipe = {
-            id: Date.now(),
+            id: Date.now(), // i used the Date.now() for easy and simple ID allocation. 
             name: name,
             ingredients: ingredients.split(',').map(ingredient => ingredient.trim()),
             instructions: instructions.split('.').map(instruction => instruction.trim())

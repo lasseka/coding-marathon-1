@@ -184,8 +184,8 @@ I'm proud of the list bullets in general, since I put in effort to make them int
     vertical-align: middle;
 }
 
-.recipe-card button {
-    align-self: flex-start; /* Align delete button to the left */
+.recipe-card .delete-btn {
+    align-self: flex-start;
     padding: 10px 20px;
     background-color: #e74c3c;
     color: white;
@@ -196,7 +196,7 @@ I'm proud of the list bullets in general, since I put in effort to make them int
     transition: background-color 0.3s;
 }
 
-.recipe-card button:hover {
+.recipe-card .delete-btn:hover {
     background-color: #c0392b;
 }
 
