@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Recipe from './Recipe';
 
 function RecipeManager() {
   //List for recipes
@@ -81,26 +82,11 @@ function RecipeManager() {
             <div>
                 <h3>Recipes</h3>
                 {recipes.map((recipe) => (
-                    <div key={recipe.id}>
-                        <h4>{recipe.name}</h4>
-                        <div>
-                            <p>Ingredients:</p>
-                            <div>
-                                {recipe.ingredients.map((ingredient, index) => (
-                                    <div key={index}>&bull; {ingredient}</div>
-                                ))}
-                            </div>
-                        </div>
-                        <div>
-                            <p>Instructions:</p>
-                            <div>
-                                {recipe.instructions.map((instruction, index) => (
-                                    <div key={index}>&bull; {instruction}</div>
-                                ))}
-                            </div>
-                        </div>
-                        <button onClick={() => deleteRecipe(recipe.id)}>Delete Recipe</button>
-                    </div>
+                    <Recipe
+                    key={recipe.id}
+                    recipe={recipe}
+                    deleteRecipe={deleteRecipe}
+                />
                 ))}
             </div>
         </div>
