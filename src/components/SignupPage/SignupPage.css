@@ -1,19 +1,21 @@
 
-.signup-container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    border: 1px solid #ccc;
-    padding: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.signup-form {
-    display: flex;
+.signup-container {
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid #ccc;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+.signup-form {
+    flex-direction: column;
     padding: 30px;
 }
 
@@ -49,7 +51,36 @@
 
 .signup-form .description{
     text-align: left;
-    align-self: flex-start;
     font-size: 14px;
     width: 100%;
+}
+
+.valid {
+    border: 2px solid green;
+    width: 100%;
+}
+
+.invalid {
+    border: 2px solid red;
+    width: 100%;
+}
+
+
+
+.signup-form .error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.signup-form .success-message {
+    color: green;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.greeting {
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: center;
 }
