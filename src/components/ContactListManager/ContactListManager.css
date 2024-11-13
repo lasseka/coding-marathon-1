@@ -1,0 +1,14 @@
+.inputs{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 200px;
+}
+.allContacts{
+    border: 1px solid black;
+
+/*
+    display:flex;
+    width: fit-content;
+*/
+}
