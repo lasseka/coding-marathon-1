@@ -1,6 +1,10 @@
 import React from 'react';
 import './RecipeManager.css';
 
+/* The component is well-structured, with clear sections for different parts of each recipe (title, ingredients, instructions, and delete button). 
+Each section (like ingredients and instructions) is visually separated and logically grouped, making the code easier to read and understand. 
+I am proud of this because it is easy for others to read. In addition, updating this is easy due to the clarity.*/
+
 
 function Recipe({ recipe, deleteRecipe }) {
     return (
