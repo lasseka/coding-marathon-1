@@ -1,0 +1,204 @@
+.recipe-manager {
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 60%;
+    font-family: sans-serif;
+}
+
+h2 {
+    margin-top: 3rem;
+    text-align: center;
+    color: #333;
+    font-family: sans-serif;
+}
+
+h3{
+    text-align: center;
+}
+
+.recipe-manager .instructions {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+
+.recipe-manager label,
+.recipes label {
+    font-size: 18px;
+    padding-bottom: 2px;
+    margin-bottom: 1 rem;
+}
+
+.recipe-manager input,
+.recipe-manager textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.recipe-manager button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #D5F3FE;
+    color: #0b1860;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.recipe-manager button:hover {
+    background-color: #a1e4fc;
+}
+
+
+/*Code Review:
+I'm proud of this responsive part of the layout. It shows one recipe card on small screens and two on bigger ones.
+While not perfect, I got to partice and learn about using repsonsive layout. If I had more time, I would've considered font sizes, box sizes, 
+moving the instructions under ingredients etc for better accessability. */
+
+.recipes {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    justify-content: center; 
+}
+
+@media (min-width: 768px) {
+    .recipes {
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+        justify-content: center; 
+    }
+}
+
+.recipe-card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    
+}
+
+.recipe-card h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.recipe-card .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recipe-card .recipe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.recipe-card .ingredients,
+.recipe-card .instructions {
+    flex: 1;
+    min-width: 200px;
+    border: 1px #2bc2f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: aliceblue;
+    border-radius: 6px;
+}
+
+/*Code Review: 
+Countering the issue of numbers not displaying.
+
+For currently unknown reason, the numbering on my ol-list (instruction steps) didn't show.
+
+I troubleshooted the ol-numbering, tried solving it in multiple ways.
+I even tried adding css inline (in the code) and it didn't solve the issue.
+AT last, i found this work around to display the numbers. I had never heard of list-counter- method before. 
+While I was researching for a fix, I also learned you could set the starting number for ol or change the numbering to for example I, II, III, IV, V. 
+Though not needed here, I found it interesting.
+
+If there was more time, I would've spend even more time to find out the root issue, 
+but this time I decided to "hard-fix" it since we're working on a tight schedule.
+
+I'm proud of the list bullets in general, since I put in effort to make them into blue circles!
+*/
+
+.recipe-card ol {
+    counter-reset: list-counter;
+}
+
+.recipe-card ol li {
+    list-style: none;
+    counter-increment: list-counter;
+}
+
+.recipe-card ol li::before {
+    content: counter(list-counter) ". ";
+    font-weight: bold;
+}
+
+.recipe-card ol, .recipe-card ul {
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.recipe-card ol li, .recipe-card ul li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.recipe-card ol li::before, .recipe-card ul li::before {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card ul li::before {
+    content: "•";
+    color: #3498db;
+    font-size: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.recipe-card .delete-btn {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.recipe-card .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+
+
